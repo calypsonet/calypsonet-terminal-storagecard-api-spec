@@ -630,10 +630,14 @@ include::uml/class-diagram.puml[Terminal Storage Card API class diagram]
 | Name       | `StorageCardSelectionExtension`
 | Kind       | Interface
 | Namespace  | `storagecard.card`
-| Extends    | `CardSelectionExtension` (<<ref_cna_tr,CNA-TR-API>>)
+| Extends    | `BasicCardSelectionExtension` (<<ref_cna_tr,CNA-TR-API>>)
 | Since      | 1.0
 | Purpose    | Allows the application to enrich the selection scenario with optional read and authentication commands executed during the selection phase. An instance is obtained via <<op_StorageCardApiFactory_createStorageCardSelectionExtension,`StorageCardApiFactory.createStorageCardSelectionExtension`>>.
 |===
+
+Being a `BasicCardSelectionExtension`, it is paired with a `BasicCardSelector` by the
+`prepareBasicSelectionCase` operation of the single-channel selection managers of the
+<<ref_cna_tr,CNA-TR-API>>: a storage card hosts no application and carries no ISO/IEC 7816-4 filter.
 
 [[op_StorageCardSelectionExtension_prepareMifareClassicAuthenticateWithKey]]
 ===== Prepare MIFARE Classic Authenticate With Key

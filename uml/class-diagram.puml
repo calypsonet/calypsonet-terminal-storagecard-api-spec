@@ -84,7 +84,7 @@ package "terminal.storagecard" as root {
     }
 
     package "card" as card {
-        interface "«<back:yellow>CardSelectionExtension</back>»\nStorageCardSelectionExtension" as StorageCardSelectionExtension <<blue>> {
+        interface "«<back:yellow>BasicCardSelectionExtension</back>»\nStorageCardSelectionExtension" as StorageCardSelectionExtension <<blue>> {
             +prepareReadBlock(blockAddress: Int) → Self
             +prepareReadBlocks(fromBlockAddress: Int, toBlockAddress: Int) → Self
             .. **ST25 / SRT512** ..
